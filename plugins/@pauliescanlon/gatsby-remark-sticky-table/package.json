@@ -1,0 +1,12 @@
+{
+  "name": "@pauliescanlon/gatsby-remark-sticky-table",
+  "version": "0.0.1",
+  "description": "A Gatsby remark plugin that converts markdown tables into divs with a sticky header",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "keywords": ["gatsby", "gatsby-plugin"]
+}

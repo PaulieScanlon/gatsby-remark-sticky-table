@@ -1,0 +1,26 @@
+html,
+body {
+  font-family: system-ui, sans-serif;
+}
+.remark-sticky-table {
+  border: 1px solid #dedede;
+}
+
+.remark-sticky-table-tr:nth-child(odd) {
+  background-color: #f3f3f3;
+}
+
+.remark-sticky-table-thead:not(:last-child),
+.remark-sticky-table-tbody:not(:last-child) {
+  border-right: 1px solid #dedede;
+}
+
+.remark-sticky-table-thead {
+  border-bottom: 1px solid #dedede;
+  background-color: #ffffff;
+}
+
+.remark-sticky-table-thead,
+.remark-sticky-table-tbody {
+  padding: 8px 16px;
+}
