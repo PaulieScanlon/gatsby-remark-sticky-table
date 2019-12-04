@@ -1,97 +1,112 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+# gatsby-remark-sticky-table
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+...is a plugin that creates sticky header tables from markdown.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+By taking advantage of the remark Abstract Syntax Tree (AST) this plugin grabs all references to the HTML `<table>` element and replaces it with a set of HTML `<div>` elements to provide more css control for better mobile first experiences.
 
-## 🚀 Quick start
+**Motivation**
+Tables are tricky, they don't really work on mobile devices and more often than not they don't look great. This plugin aims to replace the default `<table>` and its accompanying HTML elements with a set of HTML `<div>` elements that can be more easily controlled using modern day css techniques.
 
-1.  **Create a Gatsby site.**
+## 🚀 Getting started
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+### Install
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+```
+npm install @pauliescanlon/gatsby-remark-sticky-table
+```
 
-1.  **Start developing.**
+### Setup
 
-    Navigate into your new site’s directory and start it up.
+Add `gatsby-transformer-remark` to your `gatsby-config.js` then add `@pauliescanlon/gatsby-remark-sticky-table` as a plugin of that 😅
 
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
+```js
+module.exports = {
+  ...
+  plugins: [
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`@pauliescanlon/gatsby-remark-sticky-table`],
+      },
+    },
+  ],
+}
+```
 
-1.  **Open the source code and start editing!**
+### Options
 
-    Your site is now running at `http://localhost:8000`!
+| Option          | Type   | Reqiured | Default | Description                                   |
+| --------------- | ------ | -------- | ------- | --------------------------------------------- |
+| height          | number | no       | 250     | height of containing div                      |
+| backgroundColor | string | no       | null    | background color of remark-sticky-table-thead |
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+```js
+...
+plugins: [
+  {
+    resolve: `@pauliescanlon/gatsby-remark-sticky-table`,
+    options: {
+      height: 200,
+      backgroundColor: "#f7f7f7",
+    },
+  },
+]
+```
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+## ✨ Styling
 
-## 🧐 What's inside?
+This plugin ships with a minimal set of styles that are applied inline but these are purely to position the divs and create the sticky header. The more visual styles are up to you.
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+You might not need many styles but you will no doubt at least need a `background-color` on `remark-sticky-table-thead` as without this you won't really get the full effect of a sticky table header.
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+A quick way to achive this is to use the `backgroundColor` option but probably a better way will be to add this and other styles using your css method of choice.
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+For convenience each element has been given a `class` name these are:
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+| Element | class name                    | description                                          |
+| ------- | ----------------------------- | ---------------------------------------------------- |
+| div     | `remark-sticky-table`         | The outer div that wraps everything and has a height |
+| div     | `remark-sticky-table-wrapper` | An inner div with `overflow: auto`                   |
+| div     | `remark-sticky-table-table`   | A div that replaces `<table>`                        |
+| div     | `remark-sticky-table-tr`      | A div that replaces `<tr>`                           |
+| div     | `remark-sticky-table-thead`   | A div that repalces `<thead>`                        |
+| div     | `remark-sticky-table-tbody`   | A div that replaces `<tbody>`                        |
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+## 💅 Css
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+Here's some `css` to get you started
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+```css
+.remark-sticky-table {
+  border: 1px solid #dedede;
+}
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+.remark-sticky-table-tr:nth-child(odd) {
+  background-color: #f3f3f3;
+}
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+.remark-sticky-table-thead:not(:last-child),
+.remark-sticky-table-tbody:not(:last-child) {
+  border-right: 1px solid #dedede;
+}
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+.remark-sticky-table-thead {
+  border-bottom: 1px solid #dedede;
+  background-color: #ffffff;
+}
 
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
+.remark-sticky-table-thead,
+.remark-sticky-table-tbody {
+  padding: 8px 16px;
+}
+```
 
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+## 📝 Markdown
 
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+And that's it 💥 Juts use markdown as you normally would to create tables and let `gatsby-remark-sticky-table` do the rest.
 
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+```
+| Header one | Heder two | Header three |
+| ---------- | --------- | ------------ |
+| cell one   | cell two  | cell three   |
+```
