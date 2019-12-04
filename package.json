@@ -5,7 +5,7 @@
     "serve": "yarn workspace demo serve",
     "develop": "yarn workspace demo develop",
     "build": "yarn workspace demo build",
-    "release": "node copy-readme.js"
+    "release": "node copy-readme.js && yarn workspace @pauliescanlon/gatsby-remark-sticky-table publish"
   },
   "workspaces": [
     "demo",

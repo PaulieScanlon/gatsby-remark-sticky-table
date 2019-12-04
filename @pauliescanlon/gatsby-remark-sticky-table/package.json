@@ -4,9 +4,19 @@
   "description": "A Gatsby remark plugin that converts markdown tables into divs with a sticky header",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish": "npm publish"
   },
   "author": "",
   "license": "MIT",
-  "keywords": ["gatsby", "gatsby-plugin"]
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin"
+  ],
+  "dependencies": {
+    "unist-util-visit": "^2.0.1"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  }
 }
