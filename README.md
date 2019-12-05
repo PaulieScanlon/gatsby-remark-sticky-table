@@ -103,7 +103,7 @@ Here's some `css` to get you started
 
 ## 📝 Markdown
 
-And that's it 💥 Juts use markdown as you normally would to create tables and let `gatsby-remark-sticky-table` do the rest.
+And that's it 💥 Just use markdown as you normally would to create tables and let `gatsby-remark-sticky-table` do the rest.
 
 ```
 | Header one | Heder two | Header three |
