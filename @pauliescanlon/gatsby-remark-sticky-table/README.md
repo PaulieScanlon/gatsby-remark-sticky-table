@@ -47,7 +47,7 @@ plugins: [
     resolve: `@pauliescanlon/gatsby-remark-sticky-table`,
     options: {
       height: 200,
-      backgroundColor: "#f7f7f7",
+      backgroundColor: "#e0f7fa",
     },
   },
 ]
