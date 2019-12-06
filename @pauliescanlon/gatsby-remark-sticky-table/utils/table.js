@@ -9,7 +9,7 @@ const {
   stickyTableTbody,
 } = require("../styles/styles")
 
-const DEFAULT_OPTION_HEIGHT = 250
+const DEFAULT_OPTION_HEIGHT = 350
 
 const getClass = index => {
   if (index === 0) {
@@ -34,38 +34,37 @@ const getStyle = (index, backgroundColor) => {
 }
 
 const table = (node, height, backgroundColor) => {
-  const html = `<div class='${stickyTable().class}' style='${
-    stickyTable().style
-  } height: ${height ? `${height}px` : `${DEFAULT_OPTION_HEIGHT}px`};'>
-                 <div class='${stickyTableWrapper().class}' style='${
+  return `
+    <div class='${stickyTable().class}' style='${stickyTable().style} height: ${
+    height ? `${height}px` : `${DEFAULT_OPTION_HEIGHT}px`
+  };'>
+      <div class='${stickyTableWrapper().class}' style='${
     stickyTableWrapper().style
   }'>
-                  <div class='${stickyTableTable().class}' style='${
+          <div class='${stickyTableTable().class}' style='${
     stickyTableTable().style
   }'>
-                        ${node.children
-                          .map((row, index) => {
-                            return `<div class='${
-                              stickyTableTr().class
-                            }' style='${
-                              stickyTableTr().style
-                            }'>${row.children
-                              .map(
-                                cell =>
-                                  `<div class='${getClass(
-                                    index
-                                  )}' style='${getStyle(
-                                    index,
-                                    backgroundColor
-                                  )}'>${toString(cell)}</div>`
-                              )
-                              .join("")}</div>`
-                          })
-                          .join("")}</div>
-                  <div>
-                </div>`
-
-  return html
+                ${node.children
+                  .map(
+                    (row, index) => `<div class='${
+                      stickyTableTr().class
+                    }' style='${stickyTableTr().style}'>
+                    ${row.children
+                      .map(
+                        cell =>
+                          `<div class='${getClass(index)}' style='${getStyle(
+                            index,
+                            backgroundColor
+                          )}'>${toString(cell)}</div>`
+                      )
+                      .join("")}
+                    </div>`
+                  )
+                  .join("")}
+          </div>
+      </div>
+    </div>
+  `
 }
 
 module.exports = {

@@ -8,13 +8,12 @@ module.exports = ({ markdownAST }, pluginOptions) => {
   const { height, backgroundColor } = pluginOptions
 
   visit(markdownAST, `${VISITOR}`, node => {
-    let { type } = node
-    if (type !== `${VISITOR}`) return
-
     let html = null
 
-    if (type === `${VISITOR}`) {
+    if (node.type === `${VISITOR}`) {
       html = table(node, height, backgroundColor)
+    } else {
+      return
     }
 
     node.type = "html"
