@@ -17,6 +17,15 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: ["@pauliescanlon/gatsby-remark-sticky-table"],
+        // plugins: [
+        //   {
+        //     resolve: `@pauliescanlon/gatsby-remark-sticky-table`,
+        //     options: {
+        //       height: 200,
+        //       backgroundColor: "#e0f7fa",
+        //     },
+        //   },
+        // ],
       },
     },
   ],

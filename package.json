@@ -5,6 +5,9 @@
     "serve": "yarn workspace demo serve",
     "develop": "yarn workspace demo develop",
     "build": "yarn workspace demo build",
+    "test": "yarn workspace @pauliescanlon/gatsby-remark-sticky-table test",
+    "test:watch": "yarn workspace @pauliescanlon/gatsby-remark-sticky-table test:watch",
+    "test:coverage": "yarn workspace @pauliescanlon/gatsby-remark-sticky-table test:coverage",
     "release": "node copy-readme.js && yarn workspace @pauliescanlon/gatsby-remark-sticky-table publish"
   },
   "workspaces": [
