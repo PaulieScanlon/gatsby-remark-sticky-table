@@ -1,6 +1,6 @@
 const visit = require("unist-util-visit")
 
-const { table } = require("./utils/table")
+const { createTable } = require("./utils/create-table")
 
 const VISITOR = "table"
 
@@ -11,7 +11,7 @@ module.exports = ({ markdownAST }, pluginOptions) => {
     let html = null
 
     if (node.type === `${VISITOR}`) {
-      html = table(node, height, backgroundColor)
+      html = createTable(node, height, backgroundColor)
     } else {
       return
     }
