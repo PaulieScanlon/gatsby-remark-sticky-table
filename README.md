@@ -1,5 +1,5 @@
 <a href="https://gatsby-remark-sticky-table.netlify.com/" target="_blank">
-<img src="https://gatsby-remark-sticky-table.netlify.com/images/remark-sticky-table_1080x608.gif" alt="gatsby-remark-sticky-table main image" />
+<img src="https://gatsby-remark-sticky-table.netlify.com/images/remark-sticky-table.gif" alt="gatsby-remark-sticky-table gif image" />
 </a>
 
 # gatsby-remark-sticky-table
