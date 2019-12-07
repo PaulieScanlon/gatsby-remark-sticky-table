@@ -1,3 +1,7 @@
+<a href="https://gatsby-remark-sticky-table.netlify.com/" target="_blank">
+<img src="https://gatsby-remark-sticky-table.netlify.com/images/remark-sticky-table_1080x608.gif" alt="gatsby-remark-sticky-table main image" />
+</a>
+
 # gatsby-remark-sticky-table
 
 ...is a plugin that creates sticky header tables from markdown.
