@@ -7,6 +7,10 @@ By taking advantage of the remark Abstract Syntax Tree (AST) this plugin grabs a
 **Motivation**
 Tables are tricky, they don't really work on mobile devices and more often than not they don't look great. This plugin aims to replace the default `<table>` and its accompanying HTML elements with a set of HTML `<div>` elements that can be more easily controlled using modern day css techniques.
 
+## 👁️ Preview
+
+- [Live Demo](https://gatsby-remark-sticky-table.netlify.com/)
+
 ## 🚀 Getting started
 
 ### Install
