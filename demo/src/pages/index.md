@@ -1,6 +1,6 @@
 # @pauliescanlon/gatsby-remark-sticky-table
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec lacinia nisl. Ut nibh est, consequat eget ipsum id, finibus scelerisque arcu. Quisque at nisl nisl
+Demo using markdown tables that get converted to divs to create the sticky table effect.
 
 | Head one | Head two | Head three |
 | -------- | -------- | ---------- |
