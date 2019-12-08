@@ -35,51 +35,34 @@ const Layout = ({ children }) => {
 
         return (
           <Fragment>
-            <Helmet
-              htmlAttributes={{
-                lang,
-              }}
-              title={title}
-              titleTemplate={`%s | ${title}`}
-              meta={[
-                {
-                  name: `description`,
-                  content: description,
-                },
-                {
-                  property: `og:title`,
-                  content: title,
-                },
-                {
-                  property: `og:description`,
-                  content: description,
-                },
-                {
-                  property: `og:type`,
-                  content: `website`,
-                },
-                {
-                  property: `og:image`,
-                  content: `${siteURL}/images/${siteImage}`,
-                },
-                {
-                  name: `twitter:card`,
-                  content: `summary`,
-                },
-                {
-                  name: `twitter:creator`,
-                  content: author,
-                },
-                {
-                  name: `twitter:title`,
-                  content: title,
-                },
-                {
-                  name: `twitter:description`,
-                  content: description,
-                },
-              ]}
-            />
+            <Helmet title={title}>
+              <html lang={lang} />
+              <meta name="description" content={description} />
+              <meta name="image" content={`${siteURL}/images/${siteImage}`} />
+              <meta name="image:alt" content={description} />
+
+              {/* Facebook */}
+              <meta property="og:title" content={title} />
+              <meta property="og:url" content={siteURL} />
+              <meta property="og:description" content={description} />
+              <meta
+                property="og:image"
+                content={`${siteURL}/images/${siteImage}`}
+              />
+              <meta property="og:type" content="website" />
+              <meta property="og:image:alt" content={description} />
+              {/* Twitter */}
+              <meta name="twitter:card" content="summary" />
+              <meta name="twitter:title" content={title} />
+              <meta name="twitter:url" content={siteURL} />
+              <meta name="twitter:description" content={description} />
+              <meta
+                name="twitter:image"
+                content={`${siteURL}/images/${siteImage}`}
+              />
+              <meta name="twitter:image:alt" content={description}></meta>
+              <meta name="twitter:creator" content={author}></meta>
+            </Helmet>
             <main>{children}</main>
           </Fragment>
         )
