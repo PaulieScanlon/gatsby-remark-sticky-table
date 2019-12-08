@@ -4,7 +4,7 @@
 
 # gatsby-remark-sticky-table
 
-...is a plugin that creates sticky header tables from markdown.
+gatsby-remark-sticky-table is a plugin that creates sticky header tables from markdown.
 
 By taking advantage of the remark Abstract Syntax Tree (AST) this plugin grabs all references to the HTML `<table>` element and replaces it with a set of HTML `<div>` elements to provide more css control for better mobile first experiences.
 
