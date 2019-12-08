@@ -1,7 +1,15 @@
 module.exports = {
+  siteMetadata: {
+    title: `@pauliescanlon/gatsby-remark-sticky-table`,
+    description: `gatsby-remark-sticky-table is a plugin that creates sticky header tables from markdown.`,
+    siteURL: "https://gatsby-remark-sticky-table.netlify.com",
+    siteImage: "remark-sticky-table-og-image.jpg",
+    author: "@pauliescanlon",
+  },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
         path: `${__dirname}/src/pages/`,
