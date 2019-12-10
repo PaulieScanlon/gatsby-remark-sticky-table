@@ -7,7 +7,7 @@ const {
   stickyTableTr,
   stickyTableThead,
   stickyTableTbody,
-} = require("../styles/styles")
+} = require("./styles")
 
 const createTable = (node, height, backgroundColor) => {
   return `

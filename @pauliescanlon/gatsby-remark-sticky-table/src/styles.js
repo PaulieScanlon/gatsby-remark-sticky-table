@@ -1,4 +1,4 @@
-const { styled } = require("../utils/styled")
+const { styled } = require("./styled")
 
 const DEFAULT_OPTION_HEIGHT = 350
 const BASE_CLASS = "remark"
