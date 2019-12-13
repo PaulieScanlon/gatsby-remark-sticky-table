@@ -10,7 +10,7 @@ body {
 .remark-sticky-table {
   border-radius: 2px;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
-  height: 350px;
+  height: 300px;
   margin: 48px 0px;
 }
 
@@ -22,7 +22,6 @@ body {
 
 .remark-sticky-table-th {
   background-color: #f7f7f7;
-
   font-weight: 600;
   text-align: left;
 }
