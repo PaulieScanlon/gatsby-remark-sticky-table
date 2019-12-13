@@ -1,6 +1,15 @@
 # @pauliescanlon/gatsby-remark-sticky-table
 
-Demo using markdown tables that get converted to divs to create the sticky table effect.
+A markdown table like this .... 👇
+
+```
+| Head one | Head two | Head three |
+| -------- | -------- | ---------- |
+| cell one | cell two | cell three |
+
+```
+
+Gets converted to a table with a sticky header like this... 👇
 
 | Head one | Head two | Head three |
 | -------- | -------- | ---------- |
