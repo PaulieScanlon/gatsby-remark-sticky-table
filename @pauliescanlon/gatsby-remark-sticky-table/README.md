@@ -2,6 +2,16 @@
 <img src="https://gatsby-remark-sticky-table.netlify.com/images/remark-sticky-table.gif" alt="gatsby-remark-sticky-table gif image" />
 </a>
 
+<div>
+
+![npm (scoped)](https://img.shields.io/npm/v/@pauliescanlon/gatsby-remark-sticky-table?style=flat-square)
+
+![npm](https://img.shields.io/npm/dt/@pauliescanlon/gatsby-remark-sticky-table?style=flat-square)
+
+![NPM](https://img.shields.io/npm/l/@pauliescanlon/gatsby-remark-sticky-table?style=flat-square)
+
+</div>
+
 # gatsby-remark-sticky-table
 
 gatsby-remark-sticky-table is a plugin that creates sticky header tables from markdown.
