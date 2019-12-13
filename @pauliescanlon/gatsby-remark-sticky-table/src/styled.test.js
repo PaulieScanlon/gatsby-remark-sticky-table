@@ -9,8 +9,8 @@ describe("styled", () => {
       `class="remark-table" style="box-sizing: border-box; width: 100%;"`
     )
   })
-  it("returns an empty string if there's no object keys", () => {
+  it("returns an class name string if there's no object keys", () => {
     const table = () => styled("", {})
-    expect(table()).toEqual("")
+    expect(table()).toEqual('class="-table"')
   })
 })

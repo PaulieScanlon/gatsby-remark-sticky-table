@@ -1,45 +1,29 @@
 const { styled } = require("./styled")
 
-const DEFAULT_OPTION_HEIGHT = 350
 const BASE_CLASS = "remark"
 
-const commonStyles = {
-  position: "relative",
-  boxSizing: "border-box",
-}
+const stickyTable = height => {
+  if (!height) return styled(BASE_CLASS, {})
 
-const stickyTable = height =>
-  styled(BASE_CLASS, {
-    ...commonStyles,
-    width: "100%",
-    height: `${height ? height : DEFAULT_OPTION_HEIGHT}px`,
+  return styled(BASE_CLASS, {
+    height,
   })
+}
 
 const stickyTableWrapper = () =>
   styled(BASE_CLASS, {
-    ...commonStyles,
     width: "100%",
     height: "100%",
     overflow: "auto",
   })
 
-const stickyTableTable = () =>
-  styled(BASE_CLASS, {
-    ...commonStyles,
-    display: "table",
-    width: "100%",
-    whiteSpace: "nowrap",
-  })
+const stickyTableTable = () => styled(BASE_CLASS, {})
 
-const stickyTableTr = () =>
-  styled(BASE_CLASS, {
-    ...commonStyles,
-    display: "table-row",
-    width: "100%",
-    whiteSpace: "nowrap",
-  })
+const stickyTableTr = () => styled(BASE_CLASS, {})
 
-const stickyTableThead = backgroundColor => {
+const stickyTableThead = () => styled(BASE_CLASS, {})
+
+const stickyTableTh = backgroundColor => {
   const getStyles = () => {
     if (!backgroundColor) return
     return {
@@ -48,24 +32,20 @@ const stickyTableThead = backgroundColor => {
   }
 
   return styled(BASE_CLASS, {
-    ...commonStyles,
     position: "sticky",
     display: "table-cell",
     width: "auto",
     minWidth: "auto",
+    whiteSpace: "nowrap",
     top: "0px",
     zIndex: 2,
     ...getStyles(),
   })
 }
 
-const stickyTableTbody = () =>
-  styled(BASE_CLASS, {
-    ...commonStyles,
-    display: "table-cell",
-    width: "auto",
-    minWidth: "auto",
-  })
+const stickyTableTbody = () => styled(BASE_CLASS, {})
+
+const stickyTableTd = () => [styled(BASE_CLASS, {})]
 
 module.exports = {
   stickyTable,
@@ -73,5 +53,7 @@ module.exports = {
   stickyTableTable,
   stickyTableTr,
   stickyTableThead,
+  stickyTableTh,
   stickyTableTbody,
+  stickyTableTd,
 }

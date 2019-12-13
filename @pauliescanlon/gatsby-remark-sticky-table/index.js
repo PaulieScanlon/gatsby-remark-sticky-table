@@ -4,6 +4,8 @@ const { createTable } = require("./src/create-table")
 const VISITOR = "table"
 
 module.exports = ({ markdownAST }, pluginOptions) => {
+  if (!Object.keys(pluginOptions)) return markdownAST
+
   const { height, backgroundColor } = pluginOptions
 
   visit(markdownAST, `${VISITOR}`, node => {

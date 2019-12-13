@@ -4,7 +4,8 @@ const addPx = require("add-px-to-style")
 
 const styled = (baseClass, styles) => {
   const keys = Object.keys(styles)
-  if (!keys.length) return ""
+  if (!keys.length)
+    return `class="${baseClass}-${hyphenate(callerId.getData().functionName)}"`
 
   return `class="${`${baseClass}-${hyphenate(
     callerId.getData().functionName
